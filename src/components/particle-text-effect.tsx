@@ -167,7 +167,7 @@ interface ParticleTextEffectProps {
 
 const DEFAULT_WORDS = [
   "Oi Tudo Bem?",
-  "Bem vindo!",
+  "Bem-vindo!",
   "Sou Saulo Pavanello",
   "FullStack Developer",
   "Vamos Conversar?",
