@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface Vector2D {
   x: number;
@@ -179,7 +178,7 @@ export function ParticleTextEffect2({
   words = DEFAULT_WORDS,
 }: ParticleTextEffectProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const particlesRef = useRef<Particle[]>([]);
   const frameCountRef = useRef(0);
   const wordIndexRef = useRef(0);
@@ -190,7 +189,8 @@ export function ParticleTextEffect2({
     isRightClick: false,
   });
 
-  const navigate = useNavigate();
+  // navigation via react-router was causing TypeScript build errors in some environments
+  // use window.location for simple navigation to avoid type mismatch during build
 
   const pixelSteps = 6;
   const drawAsPoints = true;

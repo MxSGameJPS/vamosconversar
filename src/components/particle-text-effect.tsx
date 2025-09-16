@@ -178,7 +178,7 @@ export function ParticleTextEffect({
   words = DEFAULT_WORDS,
 }: ParticleTextEffectProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const particlesRef = useRef<Particle[]>([]);
   const frameCountRef = useRef(0);
   const wordIndexRef = useRef(0);
@@ -435,26 +435,27 @@ export function ParticleTextEffect({
   }, []);
 
   return (
-    <> 
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black ">
-      <canvas
-        ref={canvasRef}
-        className="border border-gray-800 shadow-2xl"
-        style={{ maxWidth: "100%", height: "auto" }}
-      />
-      <div className="max-w-md mt-4 text-sm text-center text-white">
-        <p className="mb-2">Saulo Pavanello</p>
-        <p className="text-xs text-white-700 ">
-          Sites e Aplicativos modernos com React, React Native, Node.js e mais.
-        </p>
-        <button
-          className="px-6 py-2 mt-4 font-semibold text-white transition-colors bg-blue-600 rounded-lg shadow hover:bg-blue-700"
-          onClick={() => navigate("/vamosconversar")}
-        >
-          Vamos? Clique aqui.
-        </button>
+    <>
+      <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black ">
+        <canvas
+          ref={canvasRef}
+          className="border border-gray-800 shadow-2xl"
+          style={{ maxWidth: "100%", height: "auto" }}
+        />
+        <div className="max-w-md mt-4 text-sm text-center text-white">
+          <p className="mb-2">Saulo Pavanello</p>
+          <p className="text-xs text-white-700 ">
+            Sites e Aplicativos modernos com React, React Native, Node.js e
+            mais.
+          </p>
+          <button
+            className="px-6 py-2 mt-4 font-semibold text-white transition-colors bg-blue-600 rounded-lg shadow hover:bg-blue-700"
+            onClick={() => navigate("/vamosconversar")}
+          >
+            Vamos? Clique aqui.
+          </button>
+        </div>
       </div>
-    </div>    
     </>
   );
 }
