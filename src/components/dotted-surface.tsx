@@ -435,13 +435,23 @@ export function ParticleTextEffect2({
     };
   }, []);
 
+  const handleWhatsAppClick = () => {
+    window.open("https://wa.me/5551993392983", "_blank");
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black p-4 rounded-2xl">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black ">
       <canvas
         ref={canvasRef}
-        className="border border-gray-800 rounded-lg shadow-2xl"
+        className="border border-gray-800 shadow-2xl"
         style={{ maxWidth: "100%", height: "auto" }}
       />
+      <button
+        className="px-4 py-2 mt-4 text-white bg-green-500 rounded-lg hover:bg-blue-600"
+        onClick={handleWhatsAppClick}
+      >
+        Quero garantir a Promoção
+      </button>
     </div>
   );
 }

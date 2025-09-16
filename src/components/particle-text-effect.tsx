@@ -435,24 +435,26 @@ export function ParticleTextEffect({
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black p-4 rounded-2xl">
+    <> 
+    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-black ">
       <canvas
         ref={canvasRef}
-        className="border border-gray-800 rounded-lg shadow-2xl"
+        className="border border-gray-800 shadow-2xl"
         style={{ maxWidth: "100%", height: "auto" }}
       />
-      <div className="mt-4 text-white text-sm text-center max-w-md">
+      <div className="max-w-md mt-4 text-sm text-center text-white">
         <p className="mb-2">Saulo Pavanello</p>
-        <p className="text-white-700 text-xs ">
+        <p className="text-xs text-white-700 ">
           Sites e Aplicativos modernos com React, React Native, Node.js e mais.
         </p>
         <button
-          className="mt-4 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold shadow transition-colors"
+          className="px-6 py-2 mt-4 font-semibold text-white transition-colors bg-blue-600 rounded-lg shadow hover:bg-blue-700"
           onClick={() => navigate("/vamosconversar")}
         >
           Vamos? Clique aqui.
         </button>
       </div>
-    </div>
+    </div>    
+    </>
   );
 }
