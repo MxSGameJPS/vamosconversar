@@ -373,7 +373,7 @@ export function ParticleTextEffect({
 
     // Auto-advance words
     frameCountRef.current++;
-    if (frameCountRef.current % 440 === 0) {
+    if (frameCountRef.current % 540 === 0) {
       wordIndexRef.current = (wordIndexRef.current + 1) % words.length;
       nextWord(words[wordIndexRef.current], canvas);
     }
